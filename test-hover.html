@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        /* CSS mặc định cho link */
+        .hover-effect {
+            position: relative;
+            /* display: inline-block; */
+            color: #333;
+            text-decoration: none;
+            padding-bottom: 4px;
+        }
+
+        /* Tạo hiệu ứng border-bottom từ giữa khi hover */
+        .hover-effect::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            width: 0;
+            height: 2px;
+            background-color: #4CAF50;
+            /* Màu của border */
+            transition: all 0.3s ease;
+            /* Thời gian và kiểu hiệu ứng */
+        }
+
+        /* Khi hover vào, border-bottom sẽ mở rộng từ giữa ra hai bên */
+        .hover-effect:hover::after {
+            width: 100%;
+            left: 0;
+        }
+    </style>
+    <a href="#" class="hover-effect">Hover vào đây</a>
+</body>
+
+</html>
